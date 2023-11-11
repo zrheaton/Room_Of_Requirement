@@ -1,0 +1,38 @@
+##This script will take data from any endpoint (designed for .csv) and output it to Elasticsearch so you can visualize the data. 
+
+$TestData = "https://www.ers.usda.gov/webdocs/DataFiles/51035/Fruit%20Prices%202020.csv?v=499.9"
+$response = Invoke-RestMethod -Uri $TestData
+
+if ($response) {
+    # Success
+    $json_data = $response | ConvertFrom-Csv | ConvertTo-Json
+    Write-Output $json_data
+}
+else {
+    echo "Double Check The Link You Provided, It's Not Working."
+}
+
+{
+Install-Module -Name "Elasticsearch" -Force
+
+    $elasticUrl = "https://zacktestenvironment.kb.us-central1.gcp.cloud.es.io:9243/api/security/saml/callback"
+    $elasticUsername = "elastic"
+    $elasticPassword = "zPRscsnMd0tfCzk9bQEnNe2g"
+
+
+    $credentials = [System.Text.Encoding]::UTF8.GetBytes("$($elasticUsername):$($elasticPassword)")
+    $base64AuthInfo = [System.Convert]::ToBase64String($credentials)
+    $headers = @{ Authorization = "Basic $base64AuthInfo" }
+
+ 
+    $result = Invoke-RestMethod -Uri $elasticUrl -Method Post -Headers $headers -Body $json_data -ContentType "application/json"
+
+    if ($result.created -eq $true) {
+        Write-Output "Data sent successfully to Elastic!"
+    } 
+    
+    else {
+        Write-Output "Failed to send data to Elastic. Error: $($result.error.type)"
+    }
+}
+
