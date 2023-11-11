@@ -7,11 +7,14 @@ cd C:\Users\17206\Documents\GitHub\Room_Of_Requirement
 echo "Any notes about this update?"
 read commit_message
 
-# Perform Git operations
-git status
+# Perform Git operations and capture their outputs
+status_output=$(git status)
+diff_output=$(git diff --cached)  # Shows changes that have been staged
+
 git add .
-git commit -m "$commit_message"
-git push origin main
+
+commit_output=$(git commit -m "$commit_message")
+push_output=$(git push origin main)
 
 # Define the file path for the output file
 # Update the path format if you're using a POSIX-style path on Windows
@@ -23,7 +26,17 @@ output_file="$output_folder/GitHubUpdate$(date '+%m%d%Y%H%M').txt"
     echo "Git Update on $(date)"
     echo "Commit Message: $commit_message"
     echo ""
-    git status
+    echo "Git Status Before Commit:"
+    echo "$status_output"
+    echo ""
+    echo "Git Diff (Staged Changes):"
+    echo "$diff_output"
+    echo ""
+    echo "Commit Output:"
+    echo "$commit_output"
+    echo ""
+    echo "Push Output:"
+    echo "$push_output"
 } > "$output_file"
 
 echo "Update complete. Details saved in $output_file"
