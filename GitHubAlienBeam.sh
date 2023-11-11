@@ -1,3 +1,7 @@
+#This script is a great tool to simplify updates to your repository. 
+#You will need two directories. 1) The Local GitHub Repository and 2) A directory for output notes (you will have to create). 
+#Insert your respective file paths and watch the magic! 
+
 #!/bin/bash
 
 # Navigate to repository directory
