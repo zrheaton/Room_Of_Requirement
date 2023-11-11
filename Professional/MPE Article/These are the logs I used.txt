@@ -1,0 +1,28 @@
+Windows System Log Example (Us MS Windows Event Logging XML - System Catch All Level 2) 
+
+<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'><System><Provider Name='Microsoft-Windows-WAS' Guid='{524b5d04-133c-4a62-8362-64e8edb9ce40}' EventSourceName='WAS'/><EventID Qualifiers='16384'>5186</EventID><Version>0</Version><Level></Level><Task>None</Task><Opcode></Opcode><Keywords></Keywords><TimeCreated SystemTime='2021-04-25T15:20:21.000000000Z'/><EventRecordID>1037095</EventRecordID><Correlation/><Execution ProcessID='0' ThreadID='0'/><Channel>System</Channel><Computer>glsp01.southcentralbank.biz</Computer><Security/></System><EventData><Data Name='ProcessID'>9812</Data><Data Name='AppPoolID'>DefaultAppPool</Data><Data Name='Minutes'>20</Data></EventData></Event>
+
+
+
+I proved that you can call it a header up until this point: </System><EventData><Data Name='ProcessID'>9812</Data><Data Name='AppPoolID'>DefaultAppPool</Data><Data Name='Minutes'>20</Data></EventData></Event> on line 3 
+
+
+
+This is the log sample from Syslog - Trend Micro
+
+04 16 2021 14:20:06 10.71.4.124 <LOC3:INFO> CEF:0|Trend Micro|Trend Micro Web Security|3.3.1.2882|100000|Access Log|0|wrsScore=81 companyID=f25a4fcc-f918-4ea0-aede-5dd1717748d0 app=2 upStreamSize=1915 userDepartment=880 - FINANCE scanType=0 malwareType=0 httpTrans={"http_req": {"headers": {"host": "r2---sn-p5qlsndr.c.2mdn.net:443", "proxy-connection": "keep-alive", "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36"}, "host": "r2---sn-p5qlsndr.c.2mdn.net", "scheme": "https", "method": "CONNECT", "path": ""}, "ver": "1.1", "http_response": {"headers": {"true-file-type": "0"}, "status_code": -1}} malwareName= rt=Apr 16 2021 18:15:55 +0000 policyName=Allow all - [default] severity=65 filehash= logType=1 dst=172.217.135.39 appName=The Secure HyperText Transfer Protocol groupName= fname= adDomain=ads-pipe.com gatewayName=roaming user principalName=kristin.moyer@ads-pipe.com downStreamSize=3915798 profileName= userName=Kristin Moyer src=75.118.215.46 transportBytes=3917713 domainName=r2---sn-p5qlsndr.c.2mdn.net cat=Computers/Internet act=allow
+
+
+05 09 2016 01:33:03 1.1.1.1 <SLOG:WARN> 1 2016-05-09T06:32:55.1224002Z sysloghost CylancePROTECT - - - Event Type: Threat, Event Name: threat_quarantined, Device Name: GQ-6FPLVZ1, IP Address: (1.1.1.1), File Name:  
+
+
+
+
+<[^>]+><[^>]+><provider\sname='(?<process>[^']+)'[^>]+>(?><eventid[^>]*>(?<vmid>\d+)</eventid>(?:\<version\>[^<]+</version>)?<level>(?<severity>[^<]*)</level>)(?:<[^>]+>[^<]*?<[^>]+>){1,2}<keywords>[^<]*</keywords><[^>]+><[^>]+>[^<]+<[^>]+>(?:<[^>]+><execution\sprocessid='(?<processid>[^']+)'\sthreadid='(?<dname>[^']+)'/>)?<[^>]+>[^<]+<[^>]+><computer>(?<session>[^<]+)<[^>]+><security(?:\suserid='(?<domain>[^\\]+)\\(?<login>[^']+)')?(.*?taskname'>(?<command>[^<]*)<)?
+
+<Event xmlns='http://schemas.microsoft.com/win/2004/08/events/event'><System><Provider Name='Microsoft-Windows-WAS' Guid='{524b5d04-133c-4a62-8362-64e8edb9ce40}' EventSourceName='WAS'/><EventID Qualifiers='16384'>5186</EventID><Version>0</Version><Level></Level><Task>None</Task><Opcode></Opcode><Keywords></Keywords><TimeCreated SystemTime='2021-04-25T15:20:21.000000000Z'/><EventRecordID>1037095</EventRecordID><Correlation/><Execution ProcessID='0' ThreadID='0'/><Channel>System</Channel><Computer>glsp01.southcentralbank.biz</Computer><Security/></System><EventData><Data Name='ProcessID'>9812</Data><Data Name='AppPoolID'>DefaultAppPool</Data><Data Name='Minutes'>20</Data></EventData></Event>
+
+
+
+
+Case 427655 is the Fortinet V6 
