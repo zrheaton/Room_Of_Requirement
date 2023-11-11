@@ -1,7 +1,16 @@
+#This script is a great tool to simplify updates to your repository. 
+#You will need two directories. 1) The Local GitHub Repository and 2) A directory for output notes (you will have to create). 
+#Insert your respective file paths and watch the magic! 
+
 #!/bin/bash
 
 # Navigate to repository directory
 cd C:\Users\17206\Documents\GitHub\Room_Of_Requirement
+
+# Pull the latest changes from the remote repository
+echo "Pulling latest changes from the remote repository..."
+pull_output=$(git pull origin main)
+echo "$pull_output"
 
 # Get user input for commit message
 echo "Any notes about this update?"
@@ -24,6 +33,10 @@ output_file="$output_folder/GitHubUpdate$(date '+%m%d%Y%H%M').txt"
 # Save the output of the Git operations
 {
     echo "Git Update on $(date)"
+    echo ""
+    echo "Git Pull Output:"
+    echo "$pull_output"
+    echo ""
     echo "Commit Message: $commit_message"
     echo ""
     echo "Git Status Before Commit:"
