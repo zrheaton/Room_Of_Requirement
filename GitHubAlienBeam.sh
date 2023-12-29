@@ -5,7 +5,8 @@
 #!/bin/bash
 
 # Navigate to repository directory
-cd C:\Users\17206\Documents\GitHub\Room_Of_Requirement
+cd /c/Users/zrhea/Documents/GitHub/Room_Of_Requirement
+
 
 # Pull the latest changes from the remote repository
 echo "Pulling latest changes from the remote repository..."
@@ -27,7 +28,7 @@ push_output=$(git push origin main)
 
 # Define the file path for the output file
 # Update the path format if you're using a POSIX-style path on Windows
-output_folder="/c/Users/17206/Desktop/GitHubUpdateNoteFolder"
+output_folder="/c/Users/zrhea/Desktop/GitHubUpdateNoteFolder"
 output_file="$output_folder/GitHubUpdate$(date '+%m%d%Y%H%M').txt"
 
 # Save the output of the Git operations
