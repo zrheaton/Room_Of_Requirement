@@ -1,0 +1,1 @@
+This is the script that I made to simplify life. Any changes I make to my GitHub I do at the local level and then trigger this script which allows me to upload. It helps because of the many different projects going on and how this isn't a standard repository where I'm updating code and such. 

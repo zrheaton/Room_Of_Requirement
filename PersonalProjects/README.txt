@@ -1,0 +1,1 @@
+This directory is where I maintain a variety of past projects. Some are from school and some are just things I worked on because there was a topic that I wanted to learn. I've got them organized into subdirectories according to how they cross my radar in life. 

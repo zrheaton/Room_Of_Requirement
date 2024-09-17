@@ -1,0 +1,1 @@
+This directory is more for personal use than anything. I found myself having to re-write scripts occasionally while organizing my plex server. I figured it would be easier to keep them here and they can also show how I go about solving challenges while using the technology available to me. 

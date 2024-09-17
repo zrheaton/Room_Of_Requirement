@@ -1,0 +1,1 @@
+This directory is where I can show a few projects that I worked on in a professional capacity and can share here. Similar to my personal projects folder these are projects that came my way from the professional world. 
