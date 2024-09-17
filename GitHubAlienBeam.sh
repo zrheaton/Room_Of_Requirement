@@ -5,7 +5,7 @@ REPO_DIR="/c/Users/zrhea/OneDrive/Desktop/Projects/GithubLocal"
 BACKUP_PARENT_DIR="/c/Users/zrhea/OneDrive/Desktop/Projects/GitHubPulls"
 TIMESTAMP=$(date '+%Y%m%d%H%M')
 PULL_DIR="$BACKUP_PARENT_DIR/GitHubPull_$TIMESTAMP"
-LOG_DIR="/c/Users/zrhea/OneDrive/Desktop/Projects/GithubLocal/UpdateLogs"
+LOG_DIR="/c/Users/zrhea/OneDrive/Desktop/Projects/GitHubPulls/UpdateLogs"
 
 # Step 1: Create a new directory to pull the latest version from GitHub
 mkdir -p "$PULL_DIR" || {
