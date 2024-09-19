@@ -1,0 +1,7 @@
+This was an original repository that I made awhile ago and have since changed where I stored my professional and personal learnings. 
+
+If you are looking for updates after 19 September 2024 please go to:
+
+https://github.com/zrheaton/zackheatonportfolio
+
+I will keep this branch active for some time as I transition the hyperlink in all of my headers and signatures. 
