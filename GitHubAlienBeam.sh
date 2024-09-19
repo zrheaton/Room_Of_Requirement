@@ -15,7 +15,7 @@ mkdir -p "$PULL_DIR" || {
 
 # Step 2: Clone the remote GitHub repository into the new directory
 echo "Cloning the remote repository into: $PULL_DIR"
-git clone https://github.com/zrheaton/Room_Of_Requirement.git "$PULL_DIR"
+git clone https://github.com/zrheaton/zackheatonportfolio.git "$PULL_DIR"
 
 # Step 3: Run a diff between the local repo and the latest pull directory
 echo "Running a diff between the local repo ($REPO_DIR) and the pulled repo ($PULL_DIR)..."
